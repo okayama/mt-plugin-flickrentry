@@ -1,0 +1,24 @@
+<style type="text/css">
+    .mediumHeader {
+        border-bottom: 1px solid #cddee7;
+        padding-bottom: 3px;
+        margin-bottom: 25px;
+    }
+    .subHeader {
+        border-bottom: 1px dotted #cddee7;
+        padding-bottom: 3px;
+        margin-bottom: 25px;
+    }
+</style>
+<mtapp:setting
+    id="is_active"
+    label="<__trans phrase="Active">">
+    <input type="checkbox" name="is_active"<mt:if name="is_active"> checked="checked"</mt:if> />
+</mtapp:setting>
+<h3 class="mediumHeader"><__trans phrase="Bookmarklet"></h3>
+<mtapp:setting
+    id="size_l"
+    label="<__trans phrase="Size L">">
+<a href="javascript:var objects=document.getElementsByTagName('link');for (var i=0;i<objects.length;i++){rel=objects[i].getAttribute('rel');if(rel=='image_src'){href=objects[i].getAttribute('href');break;}}var objects2=document.getElementsByTagName('meta');for (var i=0;i<objects2.length;i++){rel=objects2[i].getAttribute('name');if(rel=='title'){title=objects2[i].getAttribute('content');break;}}if (href) {photo_url = href.replace('_m','_z');photo_thumbnail_url = href.replace('_m','_s');window.open('<mt:var name="mt_url">?__mode=view&_type=entry&blog_id=<mt:var name="blog_id">&photo_url=' + photo_url + '&photo_thumbnail_url=' + photo_thumbnail_url + '&title=' + title);}void(0);
+"><__trans phrase="Post entry"></a>
+</mtapp:setting>

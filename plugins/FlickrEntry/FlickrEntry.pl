@@ -6,7 +6,7 @@ use base qw( MT::Plugin );
 
 our $PLUGIN_NAME = 'FlickrEntry';
 our $PLUGIN_VERSION = '1.0';
-our $SCHEMA_VERSION = '1.0';
+our $SCHEMA_VERSION = '1.3';
 
 my $plugin = new MT::Plugin::FlickrEntry( {
     id => $PLUGIN_NAME,
@@ -30,8 +30,11 @@ sub init_registry {
     $plugin->registry( {
         object_types => {
             entry => {
+                photo_id => 'string(255)',
                 photo_url => 'string(255)',
+                photo_page_url => 'string(255)',
                 photo_thumbnail_url => 'string(255)',
+                photo_description => 'string(255)',
             },
         },
         callbacks => {
@@ -39,8 +42,11 @@ sub init_registry {
         },
         tags => {
             function => {
+                EntryPhotoID => 'MT::' . $PLUGIN_NAME . '::Tags::_hdlr_entry_photo_id',
                 EntryPhotoURL => 'MT::' . $PLUGIN_NAME . '::Tags::_hdlr_entry_photo_url',
+                EntryPhotoPageURL => 'MT::' . $PLUGIN_NAME . '::Tags::_hdlr_entry_photo_page_url',
                 EntryPhotoThumbnailURL => 'MT::' . $PLUGIN_NAME . '::Tags::_hdlr_entry_photo_thumbnail_url',
+                EntryPhotoDescription => 'MT::' . $PLUGIN_NAME . '::Tags::_hdlr_entry_photo_description',
             },
         },
     } );

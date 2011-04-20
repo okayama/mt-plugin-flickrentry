@@ -8,9 +8,13 @@ our %Lexicon = (
     'Bookmarklet' => 'ブックマークレット',
     'Size L' => 'L サイズ写真',
     'Post entry' => '記事を投稿する',
+    'Photo ID' => '写真 ID',
     'Photo URL' => '写真 URL',
+    'Photo Page URL' => '写真ページ URL',
+    'Photo Description' => '写真の説明',
     'Thumbnail URL' => 'サムネイル URL',
     'Active' => '有効',
+    'This bookmarklet is effective only at Flickr individual photo page.' => 'このブックマークレットは、Flickr の個別写真画面でのみ動作します。',
 );
 
 1;

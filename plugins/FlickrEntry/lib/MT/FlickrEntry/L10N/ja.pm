@@ -15,6 +15,8 @@ our %Lexicon = (
     'Thumbnail URL' => 'サムネイル URL',
     'Active' => '有効',
     'This bookmarklet is effective only at Flickr individual photo page.' => 'このブックマークレットは、Flickr の個別写真画面でのみ動作します。',
+    'FlickrEntry Task' => 'FlickrEntry のタスク',
+    'Updated link entry \'[_1]\'' => 'エントリー「[_1]」のリンクを修正しました。',
 );
 
 1;

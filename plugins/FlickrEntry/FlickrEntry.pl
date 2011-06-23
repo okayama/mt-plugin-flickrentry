@@ -3,6 +3,7 @@ use strict;
 use MT;
 use MT::Plugin;
 use base qw( MT::Plugin );
+
 use MT::Util qw( encode_html );
 
 our $PLUGIN_NAME = 'FlickrEntry';

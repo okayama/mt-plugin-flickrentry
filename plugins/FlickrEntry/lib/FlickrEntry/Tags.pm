@@ -1,7 +1,5 @@
-package MT::FlickrEntry::Tags;
+package FlickrEntry::Tags;
 use strict;
-
-my $plugin = MT->component( 'FlickrEntry' );
 
 sub _hdlr_entry_photo_url {
     my ( $ctx, $args, $cond ) = @_;

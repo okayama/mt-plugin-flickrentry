@@ -1,0 +1,36 @@
+id: FlickrEntry
+name: FlickrEntry
+key: flickrentry
+version: 1.1
+schema_version: 1.3
+description: <MT_TRANS phrase='Utility for creating entry from flickr.'>
+author_name: okayama
+author_link: http://weeeblog.net/
+l10n_class: FlickrEntry::L10N
+blog_config_template: flickrentry_config_blog.tmpl
+settings:
+    is_active:
+        scope: blog
+object_types:
+    entry:
+        photo_id: string(255)
+        photo_url: string(255)
+        photo_page_url: string(255)
+        photo_thumbnail_url: string(255)
+        photo_description: string(255)
+callbacks:
+    MT::App::CMS::template_param.edit_entry: $flickrentry::FlickrEntry::Plugin::_cb_tp_edit_entry
+    template_param.cfg_entry: $flickrentry::FlickrEntry::Plugin::_cb_tp_cfg_entry
+    MT::App::CMS::template_source.flickrentry_config_blog: $flickrentry::FlickrEntry::Plugin::_cb_ts_flickrentry_config_blog
+tags:
+    function:
+        EntryPhotoID: $flickrentry::FlickrEntry::Tags::_hdlr_entry_photo_id
+        EntryPhotoURL: $flickrentry::FlickrEntry::Tags::_hdlr_entry_photo_url
+        EntryPhotoPageURL: $flickrentry::FlickrEntry::Tags::_hdlr_entry_photo_page_url
+        EntryPhotoThumbnailURL: $flickrentry::FlickrEntry::Tags::_hdlr_entry_photo_thumbnail_url
+        EntryPhotoDescription: $flickrentry::FlickrEntry::Tags::_hdlr_entry_photo_description
+tasks:
+    check_flickr_photo_url:
+        label: FlickrEntry Task
+        frequency: 5
+        code: $flickrentry::FlickrEntry::Tasks::check_flickr_photo_url

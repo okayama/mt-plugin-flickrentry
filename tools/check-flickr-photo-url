@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+use strict;
+use lib qw( lib ../lib );
+use lib qw( extlib ../extlib );
+use lib qw( plugins/FlickrEntry/lib ../plugins/FlickrEntry/lib );
+use lib qw( plugins/FlickrEntry/extlib ../plugins/FlickrEntry/extlib );
+
+use MT;
+
+my $app = MT->instance;
+if ( my $plugin = $app->component( 'FlickrEntry' ) ) {
+    require FlickrEntry::Tasks;
+    FlickrEntry::Tasks::check_flickr_photo_url();
+}
+
+1;
